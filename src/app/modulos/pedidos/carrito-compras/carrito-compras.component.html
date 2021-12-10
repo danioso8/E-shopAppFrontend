@@ -1,1 +1,37 @@
-<p>carrito-compras works!</p>
+<div style="height: 100%" class="mt-5 mb-5">
+  <div class="container">
+    <div>
+      <div class="card p-3" *ngFor="let p of ListadoRegistros">
+        <div class="p-3 card card-carrito mb-2" style="height: 8rem">
+          <div class="row">
+            <div class="col-3 d-flex justify-content-center align-items-center">
+              <img
+                src="{{ p.image }}"
+                alt=""
+                style="height: 6rem; width: 6rem"
+              />
+            </div>
+            <div class="col-3 d-flex justify-content-center align-items-center">
+              <p>{{ p.description }}</p>
+            </div>
+            <div class="col-3 d-flex justify-content-center align-items-center">
+              <p>Cantidad</p>
+            </div>
+            <div class="col-3 d-flex justify-content-center align-items-center">
+              <p>$ {{ p.total | number: "2.0-0" }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card p-3">
+      <div class="d-flex justify-content-center align-items-center">
+        <p>Total</p>
+        <p>$$$$$$$$$$$$$$</p>
+      </div>
+      <div class="d-flex justify-content-center align-items-center">
+        <button class="btn btn-primary btn-lg">Comprar</button>
+      </div>
+    </div>
+  </div>
+</div>

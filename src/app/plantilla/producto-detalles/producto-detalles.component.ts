@@ -64,7 +64,7 @@ export class ProductoDetallesComponent implements OnInit {
   }
 
   AgregarCarrito() {
-    alert('Agregar Funcionando xD');
+    alert('Producto Agregado');
     let cant = this.fgValidador.controls['cantidad'].value;
     if (cant === '') {
       cant = '1';
@@ -74,10 +74,31 @@ export class ProductoDetallesComponent implements OnInit {
       cantidad: cant,
     };
 
-    console.log(datosCarrito);
-
     let registros: ModeloCarrito[] = [];
+    registros.push(datosCarrito);
 
-    //
+    //tenemos que verificar si existe algun registro o no
+    let datosVerificar: ModeloCarrito[] = [];
+    datosVerificar = JSON.parse(<string>localStorage.getItem('carrito'));
+    if (datosVerificar === null) {
+      console.log('Datos Nulos');
+      localStorage.setItem('carrito', JSON.stringify(registros));
+    } else {
+      console.log('Datos No Nulos');
+      let isRegister: boolean = false;
+
+      datosVerificar.forEach((element) => {
+        if (element.id === datosCarrito.id) {
+          isRegister = true;
+          return;
+        }
+      });
+      if (isRegister === false) {
+        let newArray: ModeloCarrito[] = [];
+        newArray = registros.concat(datosVerificar);
+        console.log(newArray);
+        localStorage.setItem('carrito', JSON.stringify(newArray));
+      }
+    }
   }
 }
