@@ -13,6 +13,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { NgxCaptchaModule } from 'ngx-captcha';
 import { CarruselImagenesComponent } from './plantilla/carrusel-imagenes/carrusel-imagenes.component';
 import { ModalComponent } from './plantilla/modal/modal.component';
+import { ContactenosComponent } from './plantilla/contactenos/contactenos.component';
+import { MisionVisionComponent } from './plantilla/mision-vision/mision-vision.component';
+import { ChatComponent } from './plantilla/chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +27,9 @@ import { ModalComponent } from './plantilla/modal/modal.component';
     ProductoDetallesComponent,
     CarruselImagenesComponent,
     ModalComponent,
+    ContactenosComponent,
+    MisionVisionComponent,
+    ChatComponent,
   ],
   imports: [
     BrowserModule,

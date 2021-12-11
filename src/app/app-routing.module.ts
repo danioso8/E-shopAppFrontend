@@ -1,13 +1,28 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ChatComponent } from './plantilla/chat/chat.component';
+import { ContactenosComponent } from './plantilla/contactenos/contactenos.component';
 import { ErrorComponent } from './plantilla/error/error.component';
 import { InicioComponent } from './plantilla/inicio/inicio.component';
+import { MisionVisionComponent } from './plantilla/mision-vision/mision-vision.component';
 import { ProductoDetallesComponent } from './plantilla/producto-detalles/producto-detalles.component';
 
 const routes: Routes = [
   {
     path: 'inicio',
     component: InicioComponent,
+  },
+  {
+    path:'chat',
+    component: ChatComponent,
+  },
+  {
+    path:'Mision-Vision',
+    component: MisionVisionComponent,
+  },
+  {
+    path:'contactenos',
+    component: ContactenosComponent,
   },
   {
     path: '',
